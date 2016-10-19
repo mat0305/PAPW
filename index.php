@@ -12,23 +12,41 @@
 		
 </head>
 <body>
+ <body bgcolor="blue" text="white" link="green" vlink="olive" alink="#FF0000">
 <form>
 <p>
 Zadej počet:<input name="pocet" value="5"/>
 Zadej slovo:<input name="info" value="Pes"/><br>
 <input type="radio" name="style" value="li" checked> Odrážka<br>
 <input type="radio" name="style" value="p"> Odstavec<br>
-<input type="submit"/>
+<p><input type="submit"/>
+<p><textarea name="text" cols="70" rows="8">
+Tady má být nějaká věta.
+</textarea>
+
 </p>
 </form>
 
 
 
 <?php
+
+	print "<h1>Ahoj</h1>";
+	print "<p>".$_REQUEST["text"]. "</p>";
+	$pocet_znaku = strlen($_REQUEST["text"]);
+	print $pocet_znaku ;
 	
+	
+$pieces = explode(" ", $_REQUEST["text"]);
+print "<p>".$pieces[0]."</p>";
+print "<p>".$pieces[1]."</p>";
+print "<p>".$pieces[2]."</p>";
+ 
+
+	/*
 	print $_REQUEST["pocet"];
 	
-	print "Ahoj Karle tady máš odrážky:";
+	 print "Ahoj Karle tady máš odrážky:";
 	
 	for($i=0; $i<$_REQUEST["pocet"]; $i++) {
 		 if ($_REQUEST["style"] == "li") {
@@ -37,7 +55,7 @@ Zadej slovo:<input name="info" value="Pes"/><br>
 			print "<p>Odstavec č.".$i." ".$_REQUEST["info"]."</p>";
 		}
 	}
-
+*/
 	
 ?>
 
